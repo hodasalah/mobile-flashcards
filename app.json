@@ -1,0 +1,12 @@
+{
+  "name": "MobileCards",
+  "displayName": "MobileCards",
+  "expo": {
+    "name": "MobileCards",
+    "slug": "MobileCards",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
