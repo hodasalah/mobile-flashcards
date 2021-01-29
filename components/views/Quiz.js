@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     },
     cardFlip: {
         flex: 1,
-        height: hp("100%"),
+        height: hp("100%") - 40,
         width: wp("100%") - 45,
         justifyContent: "center",
         alignItems: "center",
@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
     label2: { color: Colors.blueGrey900 },
     fab: {
         position: "absolute",
-        marginHorizontal: 20,
+        marginHorizontal: 10,
         bottom: 0,
         zIndex: 9999,
         borderWidth: 5,
@@ -309,10 +309,10 @@ const styles = StyleSheet.create({
         color: Colors.grey500,
     },
     fabCenter: {
-        marginBottom: 50,
+        marginBottom: 60,
         borderWidth: 0,
         backgroundColor: Colors.purple500,
-        paddingHorizontal: 40,
+        paddingHorizontal: 30,
         paddingVertical: 10,
         borderRadius: 50,
     },
