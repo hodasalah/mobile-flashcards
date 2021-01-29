@@ -6,7 +6,7 @@ import Settings from "./views/Settings";
 import * as Icon from "@expo/vector-icons";
 import "react-native-gesture-handler";
 
-import { BottomNavigation, Text } from "react-native-paper";
+import { BottomNavigation } from "react-native-paper";
 function AppTabs() {
     const [index, setIndex] = React.useState(0);
     const isIOS = Platform.OS === "ios" ? true : false;

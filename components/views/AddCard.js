@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ScrollView, KeyboardAvoidingView, View, Text } from "react-native";
+import { ScrollView, KeyboardAvoidingView, Text } from "react-native";
 import { Card, Title, TextInput, Button, Colors } from "react-native-paper";
 import { connect } from "react-redux";
 import { handleAddCardToDeck } from "../../actions/index";

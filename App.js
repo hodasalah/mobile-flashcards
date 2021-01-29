@@ -7,14 +7,6 @@ import reducer from "./reducers/index";
 import middleware from "./middleware/index";
 import AppContent from "./components/AppContent";
 
-/**
- * maincolor: #7f74eb,
- * greenColor:#00c9b5,
- * yellowColor:#ffb955,
- * lightGray:#f1f3f7,
- * DarkGray:#505c6e
- */
-
 export default function App() {
     const theme = {
         ...DefaultTheme,

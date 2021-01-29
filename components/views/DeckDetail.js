@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { handleRemoveDeck } from "../../actions/index";
 import Main from "../Main";
 
-export class DeckDetail extends Component {
+class DeckDetail extends Component {
     onAddCardPress(id) {
         this.props.navigation.navigate("AddCard", {
             deckId: id,

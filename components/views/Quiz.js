@@ -179,20 +179,29 @@ class Quiz extends Component {
                             </Text>
                         </View>
                         <View style={styles.actionContainer}>
-                            <FAB
+                            <Button
                                 style={[
-                                    styles.fab,
                                     styles.fabCenter,
                                     actionsDisabled && {
                                         opacity: actionsFadeValue,
                                     },
                                 ]}
                                 disabled={actionsDisabled}
-                                color={Colors.white}
                                 small
                                 icon="rotate-right"
+                                color={Colors.white}
                                 onPress={() => this.handleCardFlip()}
-                            />
+                            >
+                                <Text
+                                    style={{
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: "bold",
+                                    }}
+                                >
+                                    Show Answer
+                                </Text>
+                            </Button>
                             <FAB
                                 style={[
                                     styles.fab,
@@ -310,6 +319,10 @@ const styles = StyleSheet.create({
         marginBottom: 50,
         borderWidth: 0,
         backgroundColor: Colors.purple500,
+        paddingHorizontal: 40,
+        paddingVertical: 12,
+        borderRadius: 50,
+        marginTop: 20,
     },
     fabLeft: {
         left: 0,
@@ -336,9 +349,9 @@ const styles = StyleSheet.create({
         width: wp("100%") - 30,
         paddingVertical: 12,
         backgroundColor: "#7f74eb",
-        fontSize: 18,
         marginTop: 10,
     },
+
     quizCompletedContainer: {
         flex: 1,
         padding: 20,

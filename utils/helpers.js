@@ -27,7 +27,7 @@ function createNotification() {
     };
 }
 
-function createChannel() {
+export function createChannel() {
     return {
         name: "Daily Reminder",
         description:

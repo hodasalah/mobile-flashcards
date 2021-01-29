@@ -1,19 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import  {decks}  from "./_DATA";
+import { decks } from "./_DATA";
 
 const DECKS_STORAGE_KEY = "Flashcards:decks";
-
-export function getData() {
-    return decks;
-}
-
-function formatDeckResults(results) {
-    return results === null ? decks : JSON.parse(results);
-}
-
-export function getDecksOld() {
-    return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(formatDeckResults);
-}
 
 export async function getDecks() {
     try {

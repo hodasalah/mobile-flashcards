@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
-import { Avatar, Card, Divider, Colors, FAB } from "react-native-paper";
+import { Avatar, Card, Divider, Colors } from "react-native-paper";
 import Main from "../Main";
-/**
- * maincolor: #7f74eb,
- * greenColor:#00c9b5,
- * yellowColor:#ffb955,
- * lightGray:#f1f3f7,
- * DarkGray:#505c6e
- */
 
 class DecksList extends Component {
     onDeckCardPress(deck) {

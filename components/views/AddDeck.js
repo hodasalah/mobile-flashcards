@@ -80,7 +80,7 @@ class AddDeck extends Component {
                                         fontWeight: "bold",
                                     }}
                                 >
-                                    Save Deck
+                                    Create Deck
                                 </Text>
                             </Button>
                         </Card.Actions>

@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 function Welcome({ navigation }) {
     const handlePress = () => {
-        //navigate to DecksList
         navigation.navigate("AppTabs");
     };
     return (
