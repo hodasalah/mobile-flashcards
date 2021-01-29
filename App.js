@@ -1,21 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+import reducer from "./reducers/index";
+import middleware from "./middleware/index";
+import AppContent from "./components/AppContent";
+
+/**
+ * maincolor: #7f74eb,
+ * greenColor:#00c9b5,
+ * yellowColor:#ffb955,
+ * lightGray:#f1f3f7,
+ * DarkGray:#505c6e
+ */
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    const theme = {
+        ...DefaultTheme,
+        colors: {
+            ...DefaultTheme.colors,
+            primary: "tomato",
+            accent: "yellow",
+        },
+    };
+    const store = createStore(reducer, middleware);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    return (
+        <Provider store={store}>
+            <PaperProvider theme={theme}>
+                <AppContent />
+            </PaperProvider>
+        </Provider>
+    );
+}
