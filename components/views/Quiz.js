@@ -13,13 +13,6 @@ import { StyleSheet, View, TouchableOpacity, Animated } from "react-native";
 import { connect } from "react-redux";
 import Main from "../Main";
 
-/**
- * maincolor: #7f74eb,
- * greenColor:#00c9b5,
- * yellowColor:#ffb955,
- * lightGray:#f1f3f7,
- * DarkGray:#505c6e
- */
 class Quiz extends Component {
     state = {
         cardRotated: false,
@@ -266,7 +259,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginHorizontal: 20,
-        marginTop: 10,
     },
     actionContainer: {
         flex: 1,
@@ -285,6 +277,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         position: "relative",
+        marginTop: 10,
     },
     card1: {
         backgroundColor: "#7f74eb",
@@ -302,17 +295,17 @@ const styles = StyleSheet.create({
     label2: { color: Colors.blueGrey900 },
     fab: {
         position: "absolute",
-        margin: 60,
+        marginHorizontal: 20,
         bottom: 0,
         zIndex: 9999,
         borderWidth: 5,
         borderRadius: 50,
-        backgroundColor: "#FFF",
+        backgroundColor: Colors.grey200,
     },
 
     remainingQuestionText: {
         fontSize: 16,
-        paddingTop: 20,
+        paddingVertical: 4,
         color: Colors.grey500,
     },
     fabCenter: {
@@ -320,18 +313,17 @@ const styles = StyleSheet.create({
         borderWidth: 0,
         backgroundColor: Colors.purple500,
         paddingHorizontal: 40,
-        paddingVertical: 12,
+        paddingVertical: 10,
         borderRadius: 50,
-        marginTop: 20,
     },
     fabLeft: {
         left: 0,
-        marginBottom: 20,
+        marginBottom: 5,
         borderColor: Colors.red500,
     },
     fabRight: {
         right: 0,
-        marginBottom: 20,
+        marginBottom: 5,
         borderColor: Colors.green500,
     },
     deckTitle: {
