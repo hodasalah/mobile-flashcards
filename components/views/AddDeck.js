@@ -43,7 +43,7 @@ class AddDeck extends Component {
                                     fontWeight: "bold",
                                 }}
                             >
-                                ADD NEW DECK
+                                CREATE NEW DECK
                             </Text>
                             <Divider />
                             <Title
