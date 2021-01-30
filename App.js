@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { createStore } from "redux";
 import { Provider } from "react-redux";
@@ -6,8 +6,12 @@ import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import reducer from "./reducers/index";
 import middleware from "./middleware/index";
 import AppContent from "./components/AppContent";
+import { setLocalNotification } from "./utils/helpers";
 
 export default function App() {
+    useEffect(() => {
+        setLocalNotification();
+    }, []);
     const theme = {
         ...DefaultTheme,
         colors: {

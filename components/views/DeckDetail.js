@@ -22,8 +22,6 @@ class DeckDetail extends Component {
     }
     render() {
         const { deck, id } = this.props;
-
-        console.log(this.props);
         return (
             <Main>
                 {deck && (
@@ -115,6 +113,7 @@ const styles = StyleSheet.create({
 });
 function mapStateToProps(state, props) {
     const { deckId } = props.route.params;
+
     return {
         deck: state[deckId],
         id: deckId,

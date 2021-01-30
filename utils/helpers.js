@@ -12,7 +12,7 @@ export function clearLocalNotification() {
     );
 }
 
-function createNotification() {
+export function createNotification() {
     return {
         title: "Mobile Flashcards Reminder",
         body: "👋 Don't forget to study for today!",
@@ -23,6 +23,9 @@ function createNotification() {
             channelId: CHANNEL_ID,
             sticky: false,
             color: "red",
+            sound: true,
+            priority: "high",
+            vibrate: true,
         },
     };
 }
@@ -41,42 +44,38 @@ export function setLocalNotification() {
     AsyncStorage.getItem(NOTIFICATION_KEY)
         .then(JSON.parse)
         .then((data) => {
-            // if (true) {
             if (data === null) {
                 Permissions.askAsync(Permissions.NOTIFICATIONS).then(
                     ({ status }) => {
+                        console.log(status);
                         if (status === "granted") {
-                            Notifications.createChannelAndroidAsync(
-                                CHANNEL_ID,
-                                createChannel()
-                            )
-                                .then((val) =>
-                                    console.log("channel return:", val)
-                                )
-                                .then(() => {
-                                    Notifications.cancelAllScheduledNotificationsAsync();
+                            Notifications.cancelAllScheduledNotificationsAsync();
 
-                                    const tomorrow = new Date();
-                                    tomorrow.setDate(tomorrow.getDate() + 1);
-                                    tomorrow.setHours(20);
-                                    tomorrow.setMinutes(0);
+                            let tomorrow = new Date();
 
-                                    Notifications.scheduleLocalNotificationAsync(
-                                        createNotification(),
-                                        {
-                                            time: tomorrow,
-                                            repeat: "day",
-                                        }
-                                    );
+                            Notifications.scheduleLocalNotificationAsync(
+                                {
+                                    title: "Log your stats!",
+                                    body:
+                                        "👋 don't forget to log your stats for today!",
+                                    ios: {
+                                        sound: true,
+                                    },
+                                    android: {
+                                        sound: true,
+                                        sticky: false,
+                                    },
+                                },
+                                {
+                                    time: tomorrow.getTime() + 6000, // almost every minute it should show the notification
+                                    repeat: "minute",
+                                }
+                            );
 
-                                    AsyncStorage.setItem(
-                                        NOTIFICATION_KEY,
-                                        JSON.stringify(true)
-                                    );
-                                })
-                                .catch((err) => {
-                                    console.log("err", err);
-                                });
+                            AsyncStorage.setItem(
+                                NOTIFICATION_KEY,
+                                JSON.stringify(true)
+                            );
                         }
                     }
                 );

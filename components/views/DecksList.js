@@ -9,12 +9,11 @@ class DecksList extends Component {
         this.props.navigation.navigate("DeckDetail", {
             deckId: deck.title,
             title: deck.title,
-            navigation: this.props.navigation,
         });
     }
     render() {
-        const { decks, navigation } = this.props;
-        console.log(decks);
+        const { decks } = this.props;
+        
         return (
             <Main>
                 <ScrollView>
