@@ -2,7 +2,6 @@ import React from "react";
 import DeckDetail from "./views/DeckDetail";
 import AddCard from "./views/AddCard";
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import DecksList from "./views/DecksList";
 import Quiz from "./views/Quiz";
 

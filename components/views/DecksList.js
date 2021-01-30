@@ -13,7 +13,7 @@ class DecksList extends Component {
     }
     render() {
         const { decks } = this.props;
-        
+
         return (
             <Main>
                 <ScrollView>
@@ -54,12 +54,6 @@ class DecksList extends Component {
                             );
                         })}
                 </ScrollView>
-                {/*  <FAB
-                    style={styles.fab}
-                    color={Colors.white}
-                    icon="plus"
-                    onPress={() => console.log("fab pressed")}
-                /> */}
             </Main>
         );
     }
